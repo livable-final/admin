@@ -1,5 +1,5 @@
 function index() {
-  return <div>index</div>;
+  return <div>방문자 관리</div>;
 }
 
 export default index;
