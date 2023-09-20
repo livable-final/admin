@@ -22,9 +22,26 @@ const globals = css`
     scrollbar-width: none; /* 파이어폭스 */
   }
 
+  /********* 스크롤 바 **********/
+  /* width */
   ::-webkit-scrollbar {
-    display: none; /* 웹킷 기반 브라우저 (Chrome, Safari...) */
+    width: 5px;
   }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${theme.palette.primary};
+    border-radius: 5px;
+    background-clip: padding-box;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /*******************************/
 
   li {
     list-style: none;
