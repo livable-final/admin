@@ -27,7 +27,6 @@ const headerStyles = css`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid ${theme.palette.greyscale.grey30};
-
   padding: 22px 24px;
 `;
 

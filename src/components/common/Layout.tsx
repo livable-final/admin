@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import pretendard from '@/styles/font';
 import Header from '@/components/common/Header';
+import theme from '@/styles/theme';
 import SideMenu from './SideMenu';
 
 function Layout({ children }: React.PropsWithChildren) {
@@ -26,7 +27,9 @@ const contentStyles = css`
   margin: 20px;
   padding: 40px 24px;
   border-radius: 16px;
-  border: 1px solid;
+  background-color: ${theme.palette.white};
+  height: calc(100vh - 130px);
+  overflow: auto;
 `;
 
 export default Layout;
