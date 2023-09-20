@@ -17,6 +17,7 @@ const globals = css`
   }
 
   body {
+    background-color: #f4f4f5;
     -ms-overflow-style: none; /* IE */
     scrollbar-width: none; /* 파이어폭스 */
   }
