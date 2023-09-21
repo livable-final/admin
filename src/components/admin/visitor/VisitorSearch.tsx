@@ -6,8 +6,8 @@ function VisitorSearch() {
     <div css={container}>
       <p>검색</p>
       <div css={searchForm}>
-        <select required>
-          <option value="" disabled selected>
+        <select required defaultValue="">
+          <option value="" disabled>
             입주사명
           </option>
           <option value="식스센스">식스센스</option>

@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
-import pretendard from '@/styles/font';
+import notoSansKR from '@/styles/font';
 import Header from '@/components/common/Header';
 import theme from '@/styles/theme';
 import SideMenu from './SideMenu';
 
 function Layout({ children }: React.PropsWithChildren) {
   return (
-    <div className={pretendard.className} css={layoutStyles}>
+    <div className={notoSansKR.variable} css={layoutStyles}>
       <Header />
       <div css={bodyStyles}>
         <SideMenu />
