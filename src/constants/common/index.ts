@@ -1,17 +1,68 @@
 import theme from '@/styles/theme';
-import { CategoryColorsProps } from '@/types/common/category';
+import { ButtonColorsProps } from '@/types/common/button';
+import { PageTitlesProps } from '@/types/common/pageTitle';
 
-
-// 공통 카테고리 색상
-export const COMMON_CATEGORY_COLORS: CategoryColorsProps = {
+// 공통 버튼 색상
+export const COMMON_BUTTON_COLORS: ButtonColorsProps = {
   blue: {
-    border: `2px solid ${theme.palette.primary}`,
-    backgroundColor: `${theme.palette.white}`,
-    color: `${theme.palette.primary}`,
+    background: `${theme.palette.bluescale.blue60}`,
+    color: `${theme.palette.white}`,
+    isDisabled: `${theme.palette.bluescale.blue20}`,
   },
   grey: {
-    border: `2px solid ${theme.palette.greyscale.grey20}`,
-    backgroundColor: `${theme.palette.white}`,
+    background: `${theme.palette.greyscale.grey30}`,
+    color: `${theme.palette.white}`,
+    isDisabled: `${theme.palette.greyscale.grey10}`, // 추후 업데이트 필요
+  },
+  secondaryBlue: {
+    background: `${theme.palette.white}`,
+    color: `${theme.palette.bluescale.blue60}`,
+  },
+  secondaryGrey: {
+    background: `${theme.palette.white}`,
     color: `${theme.palette.greyscale.grey40}`,
+  },
+};
+
+export const COMMON_PAGES_TITLE: PageTitlesProps = {
+  dashboard: {
+    title: '대시보드',
+    comment: '대시보드 관리 입니다.',
+  },
+  company: {
+    title: '입주사 관리',
+    comment: '입주사 관리 입니다.',
+  },
+  visitor: {
+    title: '방문자 관리',
+    comment: '각 세대에서 초대한 방문자 정보를 확인할 수 있습니다.',
+  },
+  community: {
+    title: '커뮤니티 관리',
+    comment: '커뮤니티 관리 입니다.',
+  },
+  notice: {
+    title: '공지/일정 관리',
+    comment: '공지/일정 관리 입니다.',
+  },
+  complaints: {
+    title: '민원관리',
+    comment: '민원관리 입니다.',
+  },
+  publicFacilities: {
+    title: '공용 시설',
+    comment: '공용 시설 관리 입니다.',
+  },
+  maintenanceCost: {
+    title: '관리비',
+    comment: '관리비 관리 입니다.',
+  },
+  Survey: {
+    title: '설문조사',
+    comment: '설문조사 관리 입니다.',
+  },
+  setting: {
+    title: '설정',
+    comment: '설정 관리 입니다',
   },
 };
