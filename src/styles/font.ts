@@ -1,7 +1,8 @@
 import localFont from 'next/font/local';
 
-const pretendard = localFont({
+const notoSansKR = localFont({
   src: '../assets/fonts/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf',
+  variable: '--notoSansKR',
 });
 
-export default pretendard;
+export default notoSansKR;
