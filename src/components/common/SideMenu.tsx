@@ -15,6 +15,7 @@ function SideMenu() {
                 <SideMenuItem
                   title={menu[keyMenu].title}
                   comment={menu[keyMenu].comment}
+                  page={menu[keyMenu].page}
                 />
               </li>
             );
@@ -27,6 +28,7 @@ function SideMenu() {
           <SideMenuItem
             title={menu.setting.title}
             comment={menu.setting.comment}
+            page={menu.setting.page}
           />
         </li>
       </ul>

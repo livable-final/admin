@@ -1,7 +1,7 @@
+import { VisitorListProps } from '@/types/visitor/visitor';
 import { css } from '@emotion/react';
-import testList from './testList';
 
-function VisitorList() {
+function VisitorList({ content }: VisitorListProps) {
   return (
     <div css={container}>
       <ul>
@@ -16,29 +16,30 @@ function VisitorList() {
           <p>차량번호</p>
           <p>주차시간</p>
         </li>
-        {testList.map((item) => {
-          return (
-            <li key={item.id}>
-              <input type="checkbox" />
-              <p>{item.InvitationTime}</p>
-              <p>{item.visitTime}</p>
-              <p>
-                {item.invitationCompany}
-                <br />
-                {item.inviter}
-              </p>
-              <p>{item.visitor}</p>
-              <p>{item.place}</p>
-              <p>
-                {item.EntryTime}
-                <br />
-                {item.ExitTime}
-              </p>
-              <p>{item.carNumber}</p>
-              <p>{item.parkingTime}</p>
-            </li>
-          );
-        })}
+        {content &&
+          content.map((item) => {
+            return (
+              <li key={item.invitationId}>
+                <input type="checkbox" />
+                <p>{item.visitTime}</p>
+                <p>{item.visitTime}</p>
+                <p>
+                  {item.company}
+                  <br />
+                  {item.host}
+                </p>
+                <p>{item.visitorName}</p>
+                <p>{item.officeName}</p>
+                <p>
+                  {item.inTime}
+                  <br />
+                  {item.outTime}
+                </p>
+                <p>{item.carNumber}</p>
+                <p>{item.stayTime}</p>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
@@ -54,7 +55,7 @@ const container = css`
     min-height: 83px;
   }
 
-  li:first-child {
+  li:first-of-type {
     background-color: #f4f4f5;
   }
 

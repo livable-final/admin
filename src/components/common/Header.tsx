@@ -1,11 +1,18 @@
 import { ChevronRight, Notification, User } from '@/assets/icons';
 import theme from '@/styles/theme';
 import { css } from '@emotion/react';
+import { useRouter } from 'next/router';
 
 function Header() {
+  const router = useRouter();
+  const onClickHandler = () => {
+    router.push('/');
+  };
   return (
     <div css={headerStyles}>
-      <p css={titleStyles}>오피스너</p>
+      <button type="button" css={titleStyles} onClick={onClickHandler}>
+        오피스너
+      </button>
       <div css={headerRightStyles}>
         <button type="button">
           <Notification />
@@ -37,6 +44,7 @@ const titleStyles = css`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  cursor: pointer;
 `;
 
 const headerRightStyles = css`

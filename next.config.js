@@ -12,6 +12,11 @@ const nextConfig = {
     });
     return config;
   },
+  // env 환경변수 load
+  env: {
+    API_BASE_URL: process.env.NEXT_PUBLIC_API_URL,
+    ADMIN_TOKEN: process.env.NEXT_ADMIN_TOKEN,
+  },
 };
 
 module.exports = nextConfig;
