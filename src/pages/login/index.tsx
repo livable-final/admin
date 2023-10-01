@@ -23,13 +23,9 @@ function Login() {
 }
 
 const containerStyles = css`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
-  gap: 96px;
-  min-width: 280px;
-  max-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default Login;

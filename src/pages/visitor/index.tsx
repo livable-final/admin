@@ -20,6 +20,7 @@ function Index() {
 }
 
 const containerStyles = css`
+  min-width: 1024px;
   hr {
     margin-top: 28px;
     height: 1px;

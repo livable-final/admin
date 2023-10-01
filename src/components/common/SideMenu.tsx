@@ -47,6 +47,7 @@ const sideMenuStyles = css`
 
   width: 236px;
   height: calc(100vh - 100px);
+  overflow: auto;
 
   li {
     border-bottom: 1px solid ${theme.palette.greyscale.grey20};
