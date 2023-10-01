@@ -4,13 +4,13 @@ import { useRouter } from 'next/router';
 import Button from '../common/Button';
 
 function AuthForm() {
-  const router = useRouter();
   const ADMIN_TOKEN = process.env.ADMIN_TOKEN as string;
   const { setUserToken } = useSaveStore();
+  const router = useRouter();
 
   const onClickCategoryHandler = () => {
     setUserToken(ADMIN_TOKEN);
-    router.push('/');
+    router.reload();
   };
 
   return (
