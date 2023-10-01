@@ -10,7 +10,6 @@ import VisitorListPagenation from './VisitorListPagenation';
 
 function Index() {
   const [visitorList, setVisitorList] = useState<VisitorListProps>();
-  console.log(visitorList);
 
   useEffect(() => {
     setVisitorList(testList);
