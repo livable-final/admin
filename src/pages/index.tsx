@@ -9,7 +9,7 @@ function Home() {
     if (!useSaveStore.getState().user) {
       router.push('/login');
     }
-  }, []);
+  }, [router]);
   return <div>admin home</div>;
 }
 
