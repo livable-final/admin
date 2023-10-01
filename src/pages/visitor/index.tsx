@@ -1,13 +1,12 @@
-import VisitorExcelDown from '@/components/admin/visitor/VisitorExcelDown';
-import VisitorList from '@/components/admin/visitor/VisitorList';
-import VisitorSearch from '@/components/admin/visitor/VisitorSearch';
+import Visitor from '@/components/admin/visitor';
 import Button from '@/components/common/Button';
 import PageTitle from '@/components/common/PageTitle';
 import { COMMON_PAGES_TITLE } from '@/constants/common';
 import { css } from '@emotion/react';
 
-function index() {
+function Index() {
   const page = COMMON_PAGES_TITLE.visitor;
+
   return (
     <div css={containerStyles}>
       <PageTitle title={page.title} comment={page.comment} />
@@ -15,11 +14,7 @@ function index() {
 
       <hr />
 
-      <div css={contentStyles}>
-        <VisitorSearch />
-        <VisitorExcelDown />
-        <VisitorList />
-      </div>
+      <Visitor />
     </div>
   );
 }
@@ -33,10 +28,4 @@ const containerStyles = css`
   }
 `;
 
-const contentStyles = css`
-  & > * {
-    padding-top: 20px;
-  }
-`;
-
-export default index;
+export default Index;
