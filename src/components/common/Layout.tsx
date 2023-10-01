@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import notoSansKR from '@/styles/font';
 import Header from '@/components/common/Header';
 import theme from '@/styles/theme';
+import mq from '@/utils/mediaquery';
 import SideMenu from './SideMenu';
 
 function Layout({ children }: React.PropsWithChildren) {
@@ -16,7 +17,17 @@ function Layout({ children }: React.PropsWithChildren) {
   );
 }
 
-const layoutStyles = css``;
+const layoutStyles = css`
+  margin: 0 auto;
+  overflow: auto;
+
+  ${mq.lg} {
+    max-width: 1024px;
+  }
+  ${mq.pc} {
+    max-width: 100%;
+  }
+`;
 
 const bodyStyles = css`
   display: flex;
