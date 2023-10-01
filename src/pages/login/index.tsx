@@ -10,7 +10,6 @@ function Login() {
 
   useEffect(() => {
     const token = useSaveStore.getState().user;
-    console.log(token);
     setUserToken(token);
   }, []);
 
