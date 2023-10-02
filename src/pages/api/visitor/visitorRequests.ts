@@ -1,22 +1,14 @@
 import apiInstance from '@/pages/api/axios';
 
-export const getVisitors = async (page: number, size: number) => {
+export const getVisitors = async (nowYear: string) => {
   const response = await apiInstance.get(
-    `admin/visitation?page=${page}&size=${size}`,
+    // 올해 전체 데이터
+    `admin/visitation?size=100&startDate=${nowYear}-01-01`,
   );
   return response.data;
 };
 
-export const getSearchVisitors = async (
-  page: number,
-  size: number,
-  Condition: string,
-  searchText: string,
-  startDate: string,
-  endDate: string,
-) => {
-  const response = await apiInstance.get(
-    `admin/visitation?page=${page}&size=${size}&queryCondition=${Condition}&query=${searchText}&startDate=${startDate}&endDate=${endDate}`,
-  );
+export const getSearchVisitors = async (queryString: string) => {
+  const response = await apiInstance.get(`admin/visitation?${queryString}`);
   return response.data;
 };
