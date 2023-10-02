@@ -25,7 +25,7 @@ function Index() {
       }
     };
     visitorsData();
-  }, []);
+  }, [nowYear]);
 
   useEffect(() => {
     setVisitorList(testList);
