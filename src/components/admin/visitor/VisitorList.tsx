@@ -17,7 +17,7 @@ function VisitorList({ content }: GetVisitorsData) {
           <p>차량번호</p>
           <p>주차시간</p>
         </li>
-        {content &&
+        {content.length ? (
           content.map((item) => {
             return (
               <li key={item.visitorId}>
@@ -49,7 +49,12 @@ function VisitorList({ content }: GetVisitorsData) {
                 </p>
               </li>
             );
-          })}
+          })
+        ) : (
+          <li>
+            <p>데이터 없음</p>
+          </li>
+        )}
       </ul>
     </div>
   );

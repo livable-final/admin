@@ -14,4 +14,5 @@ export interface VisitorListPagenationProps {
 
 export interface VisitorSearchProps {
   setVisitorList: Dispatch<SetStateAction<GetVisitorsData | undefined>>;
+  setPage: Dispatch<SetStateAction<number>>;
 }
