@@ -37,7 +37,7 @@ function Index() {
 
   return (
     <div css={contentStyles}>
-      <VisitorSearch setVisitorList={setVisitorList} />
+      <VisitorSearch setVisitorList={setVisitorList} setPage={setPage} />
 
       {visitorList && (
         <>

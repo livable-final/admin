@@ -4,7 +4,7 @@ import { VisitorSearchProps } from '@/types/visitor/visitor';
 import { css } from '@emotion/react';
 import { ChangeEvent, useState } from 'react';
 
-function VisitorSearch({ setVisitorList }: VisitorSearchProps) {
+function VisitorSearch({ setVisitorList, setPage }: VisitorSearchProps) {
   const [select, setSelect] = useState('COMPANY');
   const [searchText, setSearchText] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -45,6 +45,7 @@ function VisitorSearch({ setVisitorList }: VisitorSearchProps) {
       const response = await getSearchVisitors(queryString);
       if (response?.data) {
         setVisitorList(response.data);
+        setPage(1);
       }
     } catch (err) {
       //  검색 오류 예외 처리
