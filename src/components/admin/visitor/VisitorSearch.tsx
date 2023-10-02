@@ -1,9 +1,10 @@
 import { getSearchVisitors } from '@/pages/api/visitor/visitorRequests';
 import theme from '@/styles/theme';
+import { VisitorSearchProps } from '@/types/visitor/visitor';
 import { css } from '@emotion/react';
 import { ChangeEvent, useState } from 'react';
 
-function VisitorSearch() {
+function VisitorSearch({ setVisitorList }: VisitorSearchProps) {
   const [select, setSelect] = useState('COMPANY');
   const [searchText, setSearchText] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -27,16 +28,23 @@ function VisitorSearch() {
 
   const onClickHandler = async () => {
     try {
-      const response = await getSearchVisitors(
-        1,
-        5,
-        select,
-        searchText,
-        startDate,
-        endDate,
-      );
+      let queryString = 'size=100';
+      if (select) {
+        queryString += `&queryCondition=${select}`;
+      }
+      if (searchText) {
+        queryString += `&query=${searchText}`;
+      }
+      if (startDate) {
+        queryString += `&startDate=${startDate}`;
+      }
+      if (endDate) {
+        queryString += `&endDate=${endDate}`;
+      }
+
+      const response = await getSearchVisitors(queryString);
       if (response?.data) {
-        console.log('test');
+        setVisitorList(response.data);
       }
     } catch (err) {
       //  검색 오류 예외 처리
