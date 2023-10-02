@@ -4,28 +4,28 @@ import VisitorSearch from '@/components/admin/visitor/VisitorSearch';
 import { getVisitors } from '@/pages/api/visitor/visitorRequests';
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
-import { VisitorListProps } from '@/types/visitor/visitor';
+import { GetVisitorsData } from '@/types/visitor/api';
+import dayjs from 'dayjs';
 import testList from './testList';
 import VisitorListPagenation from './VisitorListPagenation';
 
 function Index() {
-  const [visitorList, setVisitorList] = useState<VisitorListProps>();
-  console.log(visitorList);
+  const [visitorList, setVisitorList] = useState<GetVisitorsData>();
+  const nowYear = dayjs().format('YYYY');
 
   useEffect(() => {
-    setVisitorList(testList);
     const visitorsData = async () => {
       try {
-        const response = await getVisitors(1, 5);
+        const response = await getVisitors(nowYear);
         if (response?.data) {
-          console.log('test');
+          setVisitorList(response.data);
         }
       } catch (err) {
         //  검색 오류 예외 처리
       }
     };
     visitorsData();
-  }, []);
+  }, [nowYear]);
 
   useEffect(() => {
     setVisitorList(testList);
@@ -35,14 +35,14 @@ function Index() {
   const limit = 5; // posts가 보일 최대한의 갯수
   const offset = (page - 1) * limit; // 시작점과 끝점을 구하는 offset
 
-  const ListData = (list: VisitorListProps) => {
+  const ListData = (list: GetVisitorsData) => {
     const result = list.content.slice(offset, offset + limit);
     return result;
   };
 
   return (
     <div css={contentStyles}>
-      <VisitorSearch />
+      <VisitorSearch setVisitorList={setVisitorList} />
 
       {visitorList && (
         <>
