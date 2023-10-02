@@ -1,7 +1,8 @@
-import { VisitorListProps } from '@/types/visitor/visitor';
+import { GetVisitorsData } from '@/types/visitor/api';
 import { css } from '@emotion/react';
+import dayjs from 'dayjs';
 
-function VisitorList({ content }: VisitorListProps) {
+function VisitorList({ content }: GetVisitorsData) {
   return (
     <div css={container}>
       <ul>
@@ -19,10 +20,16 @@ function VisitorList({ content }: VisitorListProps) {
         {content &&
           content.map((item) => {
             return (
-              <li key={item.invitationId}>
+              <li key={item.visitorId}>
                 <input type="checkbox" />
-                <p>{item.visitTime}</p>
-                <p>{item.visitTime}</p>
+                <p>
+                  {item.startDateTime &&
+                    dayjs(item.startDateTime).format('YYYY-MM-DD hh:mm')}
+                </p>
+                <p>
+                  {item.visitTime &&
+                    dayjs(item.visitTime).format('YYYY-MM-DD h:m')}
+                </p>
                 <p>
                   {item.company}
                   <br />
@@ -31,12 +38,15 @@ function VisitorList({ content }: VisitorListProps) {
                 <p>{item.visitorName}</p>
                 <p>{item.officeName}</p>
                 <p>
-                  {item.inTime}
+                  {item.inTime && dayjs(item.inTime).format('YYYY-MM-DD h:m')}
                   <br />
-                  {item.outTime}
+                  {item.outTime && dayjs(item.outTime).format('YYYY-MM-DD h:m')}
                 </p>
                 <p>{item.carNumber}</p>
-                <p>{item.stayTime}</p>
+                <p>
+                  {item.stayTime &&
+                    dayjs(item.stayTime).format('YYYY-MM-DD h:m')}
+                </p>
               </li>
             );
           })}
