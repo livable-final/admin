@@ -6,7 +6,6 @@ import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { GetVisitorsData } from '@/types/visitor/api';
 import dayjs from 'dayjs';
-import testList from './testList';
 import VisitorListPagenation from './VisitorListPagenation';
 
 function Index() {
@@ -25,11 +24,7 @@ function Index() {
       }
     };
     visitorsData();
-  }, []);
-
-  useEffect(() => {
-    setVisitorList(testList);
-  }, [setVisitorList]);
+  }, [nowYear]);
 
   const [page, setPage] = useState(1);
   const limit = 5; // posts가 보일 최대한의 갯수
