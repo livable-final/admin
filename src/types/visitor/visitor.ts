@@ -1,24 +1,8 @@
-export interface VisitorListProps {
-  content: Visitor[];
-}
+import { Dispatch, SetStateAction } from 'react';
+import { GetVisitorsData } from './api';
 
 export interface VisitorExcelDownProps {
   checkVisitors: number;
-}
-
-export interface Visitor {
-  invitationId: number;
-  company: string;
-  host: string;
-  visitorId: number;
-  startDateTime: string;
-  visitTime: string;
-  visitorName: string;
-  officeName: string;
-  carNumber: string;
-  inTime: string;
-  outTime: string;
-  stayTime: number;
 }
 
 export interface VisitorListPagenationProps {
@@ -28,9 +12,6 @@ export interface VisitorListPagenationProps {
   setPage: (page: number) => void;
 }
 
-export interface VisitorsSearchProps {
-  select: string;
-  searchText: string;
-  startDate: string;
-  endDate: string;
+export interface VisitorSearchProps {
+  setVisitorList: Dispatch<SetStateAction<GetVisitorsData | undefined>>;
 }
