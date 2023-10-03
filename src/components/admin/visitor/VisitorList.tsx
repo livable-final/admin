@@ -24,11 +24,11 @@ function VisitorList({ content }: GetVisitorsData) {
                 <input type="checkbox" />
                 <p>
                   {item.startDateTime &&
-                    dayjs(item.startDateTime).format('YYYY-MM-DD hh:mm')}
+                    dayjs(item.startDateTime).format('YYYY-MM-DD HH:mm')}
                 </p>
                 <p>
                   {item.visitTime &&
-                    dayjs(item.visitTime).format('YYYY-MM-DD h:m')}
+                    dayjs(item.visitTime).format('YYYY-MM-DD HH:m')}
                 </p>
                 <p>
                   {item.company}
@@ -38,15 +38,13 @@ function VisitorList({ content }: GetVisitorsData) {
                 <p>{item.visitorName}</p>
                 <p>{item.officeName}</p>
                 <p>
-                  {item.inTime && dayjs(item.inTime).format('YYYY-MM-DD h:m')}
+                  {item.inTime && dayjs(item.inTime).format('YYYY-MM-DD HH:m')}
                   <br />
-                  {item.outTime && dayjs(item.outTime).format('YYYY-MM-DD h:m')}
+                  {item.outTime &&
+                    dayjs(item.outTime).format('YYYY-MM-DD HH:m')}
                 </p>
                 <p>{item.carNumber}</p>
-                <p>
-                  {item.stayTime &&
-                    dayjs(item.stayTime).format('YYYY-MM-DD h:m')}
-                </p>
+                {item.stayTime ? <p>{item.stayTime}분</p> : <p />}
               </li>
             );
           })
