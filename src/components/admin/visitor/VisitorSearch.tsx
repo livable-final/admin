@@ -1,3 +1,4 @@
+import { Down } from '@/assets/icons';
 import { getSearchVisitors } from '@/pages/api/visitor/visitorRequests';
 import theme from '@/styles/theme';
 import { VisitorSearchProps } from '@/types/visitor/visitor';
@@ -56,10 +57,13 @@ function VisitorSearch({ setVisitorList, setPage }: VisitorSearchProps) {
     <div css={container}>
       <p>검색</p>
       <div css={searchForm}>
-        <select onChange={(e) => onChangeSelectHandler(e)}>
-          <option value="COMPANY">입주사명</option>
-          <option value="VISITOR">방문자명</option>
-        </select>
+        <div css={selectDivStyles}>
+          <select id="data" onChange={(e) => onChangeSelectHandler(e)}>
+            <option value="COMPANY">입주사명</option>
+            <option value="VISITOR">방문자명</option>
+          </select>
+          <Down />
+        </div>
         <input
           type="text"
           placeholder={
@@ -91,6 +95,17 @@ const container = css`
   }
 `;
 
+const selectDivStyles = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid ${theme.palette.greyscale.grey30};
+  padding: 011px;
+  word-break: keep-all;
+`;
+
 const searchForm = css`
   display: flex;
   align-items: center;
@@ -103,6 +118,27 @@ const searchForm = css`
     border: 1px solid ${theme.palette.greyscale.grey30};
     padding: 10px 11px;
     word-break: keep-all;
+  }
+  select {
+    border: 0; //기본 스타일 제거
+
+    -webkit-appearance: none; /* for chrome */
+
+    -moz-appearance: none; /*for firefox*/
+
+    appearance: none;
+
+    box-sizing: border-box; //select 박스의 크기 방식 지정.
+
+    background: transparent; //배경색 투명 처리
+  }
+
+  select::-ms-expand {
+    display: none; /*for IE10,11*/
+  }
+
+  select:focus {
+    outline: none;
   }
 
   input {
