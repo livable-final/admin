@@ -1,6 +1,6 @@
 import theme from '@/styles/theme';
 import { ButtonColorsProps } from '@/types/common/button';
-import { SideMenuItemsProps } from '@/types/common/sideMenuItem';
+import { SideMenuItemsTexts } from '@/types/common/sideMenuItem';
 
 // 공통 버튼 색상
 export const COMMON_BUTTON_COLORS: ButtonColorsProps = {
@@ -24,11 +24,11 @@ export const COMMON_BUTTON_COLORS: ButtonColorsProps = {
   },
 };
 
-export const COMMON_PAGES_TITLE: SideMenuItemsProps = {
+export const COMMON_PAGES_TITLE: SideMenuItemsTexts = {
   dashboard: {
     title: '대시보드',
     comment: '대시보드 관리 입니다.',
-    page: 'dashboard',
+    page: 'dashboard
   },
   company: {
     title: '입주사 관리',
@@ -68,11 +68,26 @@ export const COMMON_PAGES_TITLE: SideMenuItemsProps = {
   Survey: {
     title: '설문조사',
     comment: '설문조사 관리 입니다.',
-    page: 'Survey',
+    page: 'survey',
   },
   setting: {
     title: '설정',
     comment: '설정 관리 입니다',
     page: 'setting',
+  },
+};
+
+export const COMMON_ICON_NAMES = {
+  side: {
+    dashboard: 'dashboard',
+    company: 'company',
+    visitor: 'visitor',
+    community: 'community',
+    notice: 'notice',
+    complaints: 'complaints',
+    publicFacilities: 'publicFacilities',
+    maintenanceCost: 'maintenanceCost',
+    survey: 'survey',
+    setting: 'setting',
   },
 };
