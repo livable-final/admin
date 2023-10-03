@@ -2,8 +2,16 @@ export interface SideMenuItemProps {
   title: string;
   comment: string;
   page: string;
+  pageUrl: string;
+  onClick: (page: string) => void;
 }
 
-export interface SideMenuItemsProps {
-  [key: string]: SideMenuItemProps;
+export interface SideMenuItemsTexts {
+  [key: string]: SideMenuItemText;
+}
+
+export interface SideMenuItemText {
+  title: string;
+  comment: string;
+  page: string;
 }

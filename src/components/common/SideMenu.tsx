@@ -2,9 +2,15 @@ import theme from '@/styles/theme';
 import { css } from '@emotion/react';
 import SideMenuItem from '@/components/common/SideMenuItem';
 import { COMMON_PAGES_TITLE } from '@/constants/common';
+import { useState } from 'react';
 
 function SideMenu() {
+  const [pageUrl, setPageUrl] = useState('');
   const menu = COMMON_PAGES_TITLE;
+
+  const onClickHandler = (page: string) => {
+    setPageUrl(page);
+  };
   return (
     <div css={sideMenuStyles}>
       <ul>
@@ -16,6 +22,8 @@ function SideMenu() {
                   title={menu[keyMenu].title}
                   comment={menu[keyMenu].comment}
                   page={menu[keyMenu].page}
+                  onClick={onClickHandler}
+                  pageUrl={pageUrl}
                 />
               </li>
             );
@@ -29,6 +37,8 @@ function SideMenu() {
             title={menu.setting.title}
             comment={menu.setting.comment}
             page={menu.setting.page}
+            onClick={onClickHandler}
+            pageUrl={pageUrl}
           />
         </li>
       </ul>
