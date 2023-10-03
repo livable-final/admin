@@ -14,6 +14,7 @@ import PublicFacilities from '@/assets/icons/publicFacilities.svg';
 import MaintenanceCost from '@/assets/icons/maintenanceCost.svg';
 import Survey from '@/assets/icons/survey.svg';
 import Setting from '@/assets/icons/setting.svg';
+import Down from '@/assets/icons/down.svg';
 
 export {
   Notification,
@@ -32,4 +33,5 @@ export {
   MaintenanceCost,
   Survey,
   Setting,
+  Down,
 };
