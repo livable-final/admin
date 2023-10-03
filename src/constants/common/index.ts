@@ -28,7 +28,7 @@ export const COMMON_PAGES_TITLE: SideMenuItemsTexts = {
   dashboard: {
     title: '대시보드',
     comment: '대시보드 관리 입니다.',
-    page: 'dashboard
+    page: 'dashboard',
   },
   company: {
     title: '입주사 관리',
