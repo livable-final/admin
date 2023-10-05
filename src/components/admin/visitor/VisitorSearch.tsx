@@ -5,7 +5,13 @@ import { VisitorSearchProps } from '@/types/visitor/visitor';
 import { css } from '@emotion/react';
 import { ChangeEvent, useState } from 'react';
 
-function VisitorSearch({ setVisitorList, setPage }: VisitorSearchProps) {
+function VisitorSearch({
+  setVisitorList,
+  setPage,
+  size,
+  dataPage,
+  setDataPage,
+}: VisitorSearchProps) {
   const [select, setSelect] = useState('COMPANY');
   const [searchText, setSearchText] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -29,7 +35,7 @@ function VisitorSearch({ setVisitorList, setPage }: VisitorSearchProps) {
 
   const onClickHandler = async () => {
     try {
-      let queryString = 'size=100';
+      let queryString = `size=${size}&page=${dataPage}`;
       if (select) {
         queryString += `&queryCondition=${select}`;
       }
@@ -47,6 +53,7 @@ function VisitorSearch({ setVisitorList, setPage }: VisitorSearchProps) {
       if (response?.data) {
         setVisitorList(response.data);
         setPage(1);
+        setDataPage(0);
       }
     } catch (err) {
       //  검색 오류 예외 처리
@@ -121,15 +128,10 @@ const searchForm = css`
   }
   select {
     border: 0; //기본 스타일 제거
-
     -webkit-appearance: none; /* for chrome */
-
     -moz-appearance: none; /*for firefox*/
-
     appearance: none;
-
     box-sizing: border-box; //select 박스의 크기 방식 지정.
-
     background: transparent; //배경색 투명 처리
   }
 
@@ -144,6 +146,7 @@ const searchForm = css`
   input {
     width: 290px;
     padding: 12px 11px;
+    min-width: 100px;
   }
 
   button {
