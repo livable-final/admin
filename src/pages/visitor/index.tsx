@@ -2,6 +2,7 @@ import Visitor from '@/components/admin/visitor';
 import Button from '@/components/common/Button';
 import PageTitle from '@/components/common/PageTitle';
 import { COMMON_PAGES_TITLE } from '@/constants/common';
+import mq from '@/utils/mediaquery';
 import { css } from '@emotion/react';
 
 function Index() {
@@ -20,12 +21,18 @@ function Index() {
 }
 
 const containerStyles = css`
-  min-width: 1024px;
   hr {
     margin-top: 28px;
     height: 1px;
     background-color: #d1d5db;
     border: 0;
+  }
+
+  ${mq.lg} {
+    max-width: 768px;
+  }
+  ${mq.pc} {
+    max-width: 100%;
   }
 `;
 
