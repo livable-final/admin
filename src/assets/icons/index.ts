@@ -15,6 +15,8 @@ import MaintenanceCost from '@/assets/icons/maintenanceCost.svg';
 import Survey from '@/assets/icons/survey.svg';
 import Setting from '@/assets/icons/setting.svg';
 import Down from '@/assets/icons/down.svg';
+import LeftDisabled from '@/assets/icons/LeftDisabled.svg';
+import RightDisabled from '@/assets/icons/RightDisabled.svg';
 
 export {
   Notification,
@@ -34,4 +36,6 @@ export {
   Survey,
   Setting,
   Down,
+  LeftDisabled,
+  RightDisabled,
 };
