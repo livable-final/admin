@@ -10,7 +10,7 @@ function Home() {
       router.push('/login');
     }
   }, [router]);
-  return <div>admin home</div>;
+  return <div>관리자 페이지 HOME</div>;
 }
 
 export default Home;
