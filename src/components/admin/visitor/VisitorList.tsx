@@ -1,21 +1,27 @@
+import VISITOR_LIST_TEXT from '@/constants/visitor';
 import { GetVisitorsData } from '@/types/visitor/api';
 import { css } from '@emotion/react';
 import dayjs from 'dayjs';
 
 function VisitorList({ content }: GetVisitorsData) {
+  const { listForm, nullData } = VISITOR_LIST_TEXT;
   return (
     <div css={container}>
       <ul>
         <li>
           <input type="checkbox" />
-          <p>초대일시</p>
-          <p>방문일시</p>
-          <p>입주사/초대사</p>
-          <p>방문자</p>
-          <p>방문장소</p>
-          <p>입차시각 / 출차시각</p>
-          <p>차량번호</p>
-          <p>주차시간</p>
+          <p>{listForm.invitationTime}</p>
+          <p>{listForm.visitTime}</p>
+          <p>
+            {listForm.occupantCompany}/{listForm.inviter}
+          </p>
+          <p>{listForm.visitor}</p>
+          <p>{listForm.place}</p>
+          <p>
+            {listForm.inTime} / {listForm.outTime}
+          </p>
+          <p>{listForm.carNumber}</p>
+          <p>{listForm.parkingTime}</p>
         </li>
         {content.length ? (
           content.map((item) => {
@@ -50,7 +56,7 @@ function VisitorList({ content }: GetVisitorsData) {
           })
         ) : (
           <li>
-            <p>데이터 없음</p>
+            <p>{nullData}</p>
           </li>
         )}
       </ul>
@@ -64,7 +70,6 @@ const container = css`
     align-items: center;
     gap: 10px;
     border-bottom: 1px solid #6b7280;
-
     min-height: 83px;
   }
 
