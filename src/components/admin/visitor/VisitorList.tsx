@@ -1,10 +1,10 @@
-import VISITOR_LIST_TEXT from '@/constants/visitor';
+import VISITOR_TEXT from '@/constants/visitor';
 import { GetVisitorsData } from '@/types/visitor/api';
 import { css } from '@emotion/react';
 import dayjs from 'dayjs';
 
 function VisitorList({ content }: GetVisitorsData) {
-  const { listForm, nullData } = VISITOR_LIST_TEXT;
+  const { listForm, nullData } = VISITOR_TEXT;
   return (
     <div css={container}>
       <ul>

@@ -1,4 +1,5 @@
 import { Down } from '@/assets/icons';
+import VISITOR_TEXT from '@/constants/visitor';
 import { getSearchVisitors } from '@/pages/api/visitor/visitorRequests';
 import theme from '@/styles/theme';
 import { VisitorSearchProps } from '@/types/visitor/visitor';
@@ -16,6 +17,8 @@ function VisitorSearch({
   const [searchText, setSearchText] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+
+  const { search } = VISITOR_TEXT;
 
   const onChangeSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelect(event.target.value);
@@ -66,8 +69,8 @@ function VisitorSearch({
       <div css={searchForm}>
         <div css={selectDivStyles}>
           <select id="data" onChange={(e) => onChangeSelectHandler(e)}>
-            <option value="COMPANY">입주사명</option>
-            <option value="VISITOR">방문자명</option>
+            <option value="COMPANY">{search.occupantCompany}</option>
+            <option value="VISITOR">{search.visitor}</option>
           </select>
           <Down />
         </div>
@@ -75,8 +78,8 @@ function VisitorSearch({
           type="text"
           placeholder={
             select === 'COMPANY'
-              ? '검색하실 입주사명을 입력해주세요'
-              : '검색하실 방문자명을 입력해주세요'
+              ? search.searchPlaceholder.company
+              : search.searchPlaceholder.visitor
           }
           onChange={(e) => onChangeSearchTextHandler(e)}
         />
@@ -89,7 +92,7 @@ function VisitorSearch({
             onClickHandler();
           }}
         >
-          검색
+          {search.searchBtn}
         </button>
       </div>
     </div>
