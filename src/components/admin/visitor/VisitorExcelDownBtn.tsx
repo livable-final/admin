@@ -1,13 +1,16 @@
 import { Excel } from '@/assets/icons';
+import VISITOR_TEXT from '@/constants/visitor';
+
 import theme from '@/styles/theme';
 import { css } from '@emotion/react';
 
 function Button() {
   const onClick = () => {};
+  const { excelDown } = VISITOR_TEXT;
   return (
     <button type="button" css={buttonStyles} onClick={onClick}>
       <Excel />
-      <span>다운로드</span>
+      <span>{excelDown}</span>
     </button>
   );
 }

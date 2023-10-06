@@ -1,4 +1,5 @@
 import { ChevronRight, Notification, User } from '@/assets/icons';
+import { PROJECT_NAME } from '@/constants/common';
 import theme from '@/styles/theme';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
@@ -11,7 +12,7 @@ function Header() {
   return (
     <div css={headerStyles}>
       <button type="button" css={titleStyles} onClick={onClickHandler}>
-        오피스너
+        {PROJECT_NAME}
       </button>
       <div css={headerRightStyles}>
         <button type="button">
@@ -20,7 +21,7 @@ function Header() {
         <button type="button">
           <User />
         </button>
-        <p>000님</p>
+        <p>관리자님</p>
         <button type="button" css={arrowStyles}>
           <ChevronRight />
         </button>

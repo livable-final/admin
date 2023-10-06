@@ -2,6 +2,8 @@ import theme from '@/styles/theme';
 import { ButtonColorsProps } from '@/types/common/button';
 import { SideMenuItemsTexts } from '@/types/common/sideMenuItem';
 
+export const PROJECT_NAME = '오피스너';
+
 // 공통 버튼 색상
 export const COMMON_BUTTON_COLORS: ButtonColorsProps = {
   blue: {
